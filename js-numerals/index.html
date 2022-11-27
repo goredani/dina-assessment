@@ -5,21 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="./dist/style.css">
     <title>Document</title>
 </head>
 <body>
     <header>
         <h1>Number conversion tool</h1>
     </header>
-    <section>
+    <section id="input-container">
+        <p class="description">Convert arabic numbers into english text. Just add your number below (up to one trillion), click on the 'Convert to text' button and see the result.</p>
         <form id="form">
-            <label for="quantity">Quantity (between negative and positive one trillion):</label>
-            <input type="number" id="quantity" name="quantity" min="0" max="9999999999999" step="1">
-            <button type='submit'>Show me the text</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="9999999999999" step="1" placeholder="Type your number here"><br>
+            <button type='submit'>Convert to text</button>
         </form>
     </section>
-    <section>
-        <p id="result" class="result">The result will be here</p>
+    <section id="result-container">
+        <div class="result">
+            <p id="result-text"></p>
+            <div class="result-controll">
+                <button class="copy">Copy</button>
+                <button class="close">&times;</button>
+            </div>
+            
+        </div>
     </section>
     <footer>
         This is the footer.

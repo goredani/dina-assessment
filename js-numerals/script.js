@@ -48,7 +48,7 @@ const numLimit = 9999999999999;
 
 let numText = '';
 
-const result = document.querySelector('#result');
+const result = document.querySelector('#result-text');
 const form = document.querySelector('#form');
 
 const convertNum = (num) => {
