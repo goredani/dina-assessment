@@ -1,6 +1,6 @@
 const ones = {
     0: 'zero',
-    1:  'one',
+    1: 'one',
     2: 'two',
     3: 'three',
     4: 'four',
@@ -44,28 +44,32 @@ const suffixes = {
     5: 'trillion '
 }
 
-const numLimit = 100000000000;
+const numLimit = 9999999999999;
 
 let numText = '';
 
 
 
 const convertNum = (num) => {
+    numText = '';
     const absNum = Math.abs(num);
 
     try {
-        if (num > numLimit) {
+        if (isNaN(num)) {
             throw "Number is too big";
+        } else if (num > numLimit) {
+            throw 'The input is not a number'
         }
     }
     catch(err) {
-        alert(err);
         return 'ERROR';
     }
 
     if(num.toString().includes('-') && absNum != 0) {
-        numText += 'negative ';
+        numText += 'minus ';
     }
+    
+    
 
     if(absNum in ones) {
         numText += ones[absNum];
@@ -76,16 +80,31 @@ const convertNum = (num) => {
 
         let count = numArray.length;
 
+
+
         for (let i = 0; i< numArray.length; i++) {
+           
+
           if (numArray[i][0] !== '000') {
-            if(numArray[i][0].length === 3){
-                numText += "and ";
-                numText += threeDigitConvert(parseInt(numArray[i]));
-                numText += " " + suffixes[count];
-            } else {
-                numText += twoDigitOrLessConvert(parseInt(numArray[i]));
-                numText += " " + suffixes[count];
+            
+
+              if(numArray[i][0].length === 3){
+                  if (count === 1) {
+                      numText += threeDigitConvert(parseInt(numArray[i]), true);
+                      numText += " " + suffixes[count];
+                  } else {
+                    numText += threeDigitConvert(parseInt(numArray[i]), false);
+                    numText += " " + suffixes[count];
+                  }
+                  
+                } else {
+                    
+                        numText += twoDigitOrLessConvert(parseInt(numArray[i]));
+                        numText += " " + suffixes[count];       
             }
+
+            
+
             count--;
           } 
           else {
@@ -94,10 +113,12 @@ const convertNum = (num) => {
         }
     }
 
+    numText = numText.replace(/\s+/g,' ').trim();
+
     return numText;
 }
 
-const threeDigitConvert = (num) => {
+const threeDigitConvert = (num, lastRun) => {
     let currentNumText = '';
 
     if(num === 0) {
@@ -105,16 +126,23 @@ const threeDigitConvert = (num) => {
     }
 
     if(num < 100) {
-        currentNumText += twoDigitOrLessConvert(num);
+        if (lastRun === true) {
+            currentNumText += ' and ';
+        }
+        currentNumText += twoDigitOrLessConvert(num, lastRun);
         return currentNumText;
     }
 
     currentNumText += ones[num.toString().charAt(0)];
-    
-    currentNumText += " hundred ";
+
+    currentNumText += " hundred";
+
+
+    if (lastRun === true && num.toString().charAt(1) != 0 || num.toString().charAt(2) != 0) {
+        currentNumText += ' and ';
+    }
 
     if(num.toString().substr(1) !== '00') {
-        currentNumText += "and ";
         currentNumText += twoDigitOrLessConvert(parseInt(num.toString().substr(1)));
     }
 
@@ -131,13 +159,13 @@ const twoDigitOrLessConvert = (num) => {
     if(num in tens) {
         currentNumText += tens[num];
     } else {
-        currentNumText += prefixes[num.toString().charAt(0)];
+        currentNumText += ' ' + prefixes[num.toString().charAt(0)];
 
         if(num.toString().charAt(1) !== '0') {
             currentNumText += '-' + ones[num.toString().charAt(1)];
         }
     }
-
+   
     return currentNumText;
 
 
@@ -174,4 +202,6 @@ const splitNum = (num) => {
     return numArray;
 }
 
-console.log(convertNum(1999));
+console.log(convertNum('something'));
+
+module.exports = convertNum;

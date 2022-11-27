@@ -1,0 +1,15 @@
+{
+  "name": "js-numerals",
+  "version": "1.0.0",
+  "description": "Create a web-based solution that converts numeric input into the English phrase of that number.",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
