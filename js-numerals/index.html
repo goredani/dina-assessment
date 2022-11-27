@@ -8,6 +8,21 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Number conversion tool</h1>
+    </header>
+    <section>
+        <form id="form">
+            <label for="quantity">Quantity (between negative and positive one trillion):</label>
+            <input type="number" id="quantity" name="quantity" min="0" max="9999999999999" step="1">
+            <button type='submit'>Show me the text</button>
+        </form>
+    </section>
+    <section>
+        <p id="result" class="result">The result will be here</p>
+    </section>
+    <footer>
+        This is the footer.
+    </footer>
 </body>
 </html>

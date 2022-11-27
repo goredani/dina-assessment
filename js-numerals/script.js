@@ -48,7 +48,8 @@ const numLimit = 9999999999999;
 
 let numText = '';
 
-
+const result = document.querySelector('#result');
+const form = document.querySelector('#form');
 
 const convertNum = (num) => {
     numText = '';
@@ -114,7 +115,6 @@ const convertNum = (num) => {
     }
 
     numText = numText.replace(/\s+/g,' ').trim();
-
     return numText;
 }
 
@@ -202,6 +202,16 @@ const splitNum = (num) => {
     return numArray;
 }
 
-console.log(convertNum('something'));
+
+
+
+const logSubmit = (event) => {
+    event.preventDefault();
+    let numberToConvert = event.target.elements.quantity.value;
+    result.innerHTML = convertNum(numberToConvert);
+    
+}
+
+form.addEventListener('submit', logSubmit);
 
 module.exports = convertNum;
