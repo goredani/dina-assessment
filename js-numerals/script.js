@@ -48,8 +48,11 @@ const numLimit = 9999999999999;
 
 let numText = '';
 
-const result = document.querySelector('#result-text');
+const result = document.querySelector('#result-container');
 const form = document.querySelector('#form');
+const input = document.querySelector('input');
+
+console.log(input)
 
 const convertNum = (num) => {
     numText = '';
@@ -115,7 +118,13 @@ const convertNum = (num) => {
     }
 
     numText = numText.replace(/\s+/g,' ').trim();
-    return numText;
+    return `
+        <div class="result">
+            <p id="result-text">${numText}</p>
+            <button class="copy">Copy</button>
+        
+        </div>
+    `;
 }
 
 const threeDigitConvert = (num, lastRun) => {
@@ -203,12 +212,12 @@ const splitNum = (num) => {
 }
 
 
-
-
 const logSubmit = (event) => {
     event.preventDefault();
     let numberToConvert = event.target.elements.quantity.value;
+    
     result.innerHTML = convertNum(numberToConvert);
+    input.value = '';
     
 }
 
