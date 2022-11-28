@@ -216,7 +216,6 @@ const splitNum = (num) => {
 
 const copyText = () => {
     const text = document.querySelector('#result-text').innerText;
-    console.log(text);
 
     navigator.clipboard.writeText(text);
 
