@@ -52,7 +52,10 @@ const result = document.querySelector('#result-container');
 const form = document.querySelector('#form');
 const input = document.querySelector('input');
 
-console.log(input)
+
+
+
+
 
 const convertNum = (num) => {
     numText = '';
@@ -211,6 +214,15 @@ const splitNum = (num) => {
     return numArray;
 }
 
+const copyText = () => {
+    const text = document.querySelector('#result-text').innerText;
+    console.log(text);
+
+    navigator.clipboard.writeText(text);
+
+    alert('Copied the number: ' + text);
+}
+
 
 const logSubmit = (event) => {
     event.preventDefault();
@@ -218,9 +230,14 @@ const logSubmit = (event) => {
     
     result.innerHTML = convertNum(numberToConvert);
     input.value = '';
+
+    const copy = document.querySelector('.copy');
+    copy.addEventListener('click', copyText);
     
 }
 
 form.addEventListener('submit', logSubmit);
+
+
 
 module.exports = convertNum;
