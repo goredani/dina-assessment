@@ -1,4 +1,4 @@
-const convertNum = require('./script');
+const convertNum = require('./convertNum.js');
 
 test('test with one digit', () => {
     expect(convertNum(7)).toBe('seven');
@@ -34,10 +34,6 @@ test('test with max digit', () => {
 
 test('test with zero', () => {
     expect(convertNum(0)).toBe('zero');
-})
-
-test('test with negative number', () => {
-    expect(convertNum(-236)).toBe('minus two hundred and thirty-six');
 })
 
 test('test with more than max digit', () => {

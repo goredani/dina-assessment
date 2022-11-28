@@ -1,8 +1,17 @@
 # Arabic number conversion tool
 
-Create a web-based solution that converts numeric input into the English phrase of that number. 
+## Task description
+
+1. npm install
+2. There's no server so you can open the index.html in the browser and the app will work.
+3. Type 'npm test' to run the tests
+
+## The original task
+
+Create a web-based solution that converts numeric input into the English phrase of that number.
 
 For example:
+
 <pre>
 7       === seven
 42      === forty-two
@@ -17,6 +26,7 @@ For example:
 Note: Numbers greater than 100 may include the word "and" between the hundreds figure and the rest of the number. Figure out the pattern and implement the solution accordingly.
 
 Treat this task like a project to create a real-life application, focus on other aspects too, not just the code:
+
 - Fork this project.
 - Use the best stack matching the simplicity of the task.
 - Don't use external libraries for the conversion.
