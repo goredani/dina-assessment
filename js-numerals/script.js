@@ -20,9 +20,14 @@ const logSubmit = (event) => {
     const resultText = convertNum(numberToConvert);
 
     const resultHTML = `
+    
     <div class="result">
-        <p id="result-text">${resultText}</p>
-        <button class="copy">Copy</button>
+        <p class="number">${new Intl.NumberFormat().format(numberToConvert)} is: </p>
+        <hr>
+        <div class="result-content">
+            <p id="result-text">${resultText}</p>
+            <button class="copy">Copy</button>
+        </div>
     </div>
     `;
 

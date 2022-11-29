@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1669654223310" clover="3.2.0">
-  <project timestamp="1669654223310" name="All files">
+<coverage generated="1669734522730" clover="3.2.0">
+  <project timestamp="1669734522730" name="All files">
     <metrics statements="80" coveredstatements="78" conditionals="39" coveredconditionals="35" methods="4" coveredmethods="4" elements="123" coveredelements="117" complexity="0" loc="80" ncloc="80" packages="1" files="1" classes="1"/>
     <file name="convertNum.js" path="C:\Users\goredani\Documents\DEVELOPMENT\DINA\dina-assessment\js-numerals\convertNum.js">
       <metrics statements="80" coveredstatements="78" conditionals="39" coveredconditionals="35" methods="4" coveredmethods="4"/>
