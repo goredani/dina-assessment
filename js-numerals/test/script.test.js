@@ -1,4 +1,4 @@
-const convertNum = require('./convertNum.js');
+const convertNum = require('../scripts/convertNum.js');
 
 test('test with one digit', () => {
     expect(convertNum(7)).toBe('seven');
