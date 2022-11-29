@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1669734522730" clover="3.2.0">
-  <project timestamp="1669734522730" name="All files">
-    <metrics statements="80" coveredstatements="78" conditionals="39" coveredconditionals="35" methods="4" coveredmethods="4" elements="123" coveredelements="117" complexity="0" loc="80" ncloc="80" packages="1" files="1" classes="1"/>
+<coverage generated="1669735213920" clover="3.2.0">
+  <project timestamp="1669735213920" name="All files">
+    <metrics statements="80" coveredstatements="78" conditionals="41" coveredconditionals="37" methods="4" coveredmethods="4" elements="125" coveredelements="119" complexity="0" loc="80" ncloc="80" packages="1" files="1" classes="1"/>
     <file name="convertNum.js" path="C:\Users\goredani\Documents\DEVELOPMENT\DINA\dina-assessment\js-numerals\convertNum.js">
-      <metrics statements="80" coveredstatements="78" conditionals="39" coveredconditionals="35" methods="4" coveredmethods="4"/>
+      <metrics statements="80" coveredstatements="78" conditionals="41" coveredconditionals="37" methods="4" coveredmethods="4"/>
       <line num="3" count="1" type="stmt"/>
       <line num="17" count="1" type="stmt"/>
       <line num="30" count="1" type="stmt"/>
@@ -52,7 +52,7 @@
       <line num="147" count="9" type="stmt"/>
       <line num="150" count="9" type="cond" truecount="5" falsecount="0"/>
       <line num="151" count="7" type="stmt"/>
-      <line num="154" count="9" type="cond" truecount="2" falsecount="0"/>
+      <line num="154" count="9" type="cond" truecount="4" falsecount="0"/>
       <line num="155" count="7" type="stmt"/>
       <line num="158" count="9" type="stmt"/>
       <line num="162" count="1" type="stmt"/>

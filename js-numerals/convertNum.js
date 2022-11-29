@@ -138,7 +138,7 @@ const threeDigitConvert = (num, lastRun) => {
         if (lastRun === true) {
             currentNumText += ' and ';
         }
-        currentNumText += twoDigitOrLessConvert(num, lastRun);
+        currentNumText += twoDigitOrLessConvert(num);
         return currentNumText;
     }
 
