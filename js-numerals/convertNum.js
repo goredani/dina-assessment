@@ -151,7 +151,7 @@ const threeDigitConvert = (num, lastRun) => {
         currentNumText += ' and ';
     }
 
-    if(num.toString().substr(1) !== '00') {
+    if(num.toString().charAt(1) != 0 || num.toString().charAt(2) != 0) {
         currentNumText += twoDigitOrLessConvert(parseInt(num.toString().substr(1)));
     }
 
