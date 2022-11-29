@@ -2,8 +2,8 @@
 
 ## Task description
 
-1. npm install
-2. There's no server so you can open the index.html in the browser and the app will work.
+1. There's no server so you can open the index.html in the browser and the app will run.
+2. If you want to run the tests, you need to install jest (npm install)
 3. Type 'npm test' to run the tests
 
 ## The original task
