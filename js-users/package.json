@@ -1,0 +1,16 @@
+{
+  "name": "js-users",
+  "version": "1.0.0",
+  "description": "- Fork this project.\r - Commit the important milestones and not just the final result.\r - Go with the exercises step by step\r - Use those tools you can work the the quickest, the more effective with.\r - Write a code what you don’t mind to present and you’re not lost in it.\r - If you face a barrier or don’t understand something – try to find the right\r \tsolution – be creative and independent.\r - If you really get stuck ask for help, but in this case define your question\r \tthoroughly/exactly.\r - Cover your code with test cases wherever you can.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
