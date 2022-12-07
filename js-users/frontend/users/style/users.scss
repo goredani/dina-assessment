@@ -1,0 +1,77 @@
+.locked .user-name {
+    text-decoration: line-through;
+    color: rgb(158, 158, 158);
+}
+
+.locked .user-created {
+    text-decoration: line-through;
+    color: rgb(158, 158, 158);
+}
+
+
+#items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 80vh;
+    margin-bottom: 16px;
+
+    .user {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        background-color: #fff;
+        border: 1px solid #EAEAEA;
+        border-radius: 8px;
+        box-shadow:
+            4.8px 3.3px 10px rgba(0, 0, 0, 0.02),
+            38px 26px 80px rgba(0, 0, 0, 0.04)
+        ;
+        
+        .user-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 16px;
+
+            button {
+                cursor: pointer;
+                background-color: #fff;
+                border-radius: 4px;
+                border: 1px solid #B8CCDF;
+
+                &:hover {
+                    background-color: #eaf3fd
+                }
+            }
+        }
+    }
+
+}
+
+
+
+#pagination-buttons {
+    position: sticky;
+    bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: #B8CCDF;
+    border-radius: 8px;
+
+    button {
+        cursor: pointer;
+        border-radius: 4px;
+        border: 0;
+
+        &:hover {
+            background-color: #eaf3fd
+        }
+
+    }
+}

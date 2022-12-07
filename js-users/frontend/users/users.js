@@ -1,17 +1,17 @@
 const users = document.querySelector('#paginated-list');
 
 const displayUsers = (user) => {
-    
-        
-            return `<ul ${user.status === 'locked' ? 'class="user locked"' : 'class="user"'}>
-            <li>${user.last_name}</li>
-            <li>${user.first_name}</li>
-            <li>${user.created_at}</li>
-            <button id=${user.id}>Edit</button>
-            <button id='valami'>Lock</button>
-            </ul>`
-        
-        
+            return `<div ${user.status === 'locked' ? 'class="user locked"' : 'class="user"'}>
+            <div>
+                <div class="user-name">${user.first_name} ${user.last_name}</div>
+                <div class="user-created">${new Date(user.created_at)}</div>
+            </div>
+            
+            <div class="button-container">
+                <button id=${user.id}>Edit</button>
+            </div>
+            
+            </div>`      
 }
 
 const editUser = (userId) => {
@@ -70,6 +70,8 @@ const getUsers = () => {
                         showPage(event.target.innerText);
                     })
                 }
+
+                addEvent();
             }
 
 
@@ -91,19 +93,11 @@ const getUsers = () => {
 
             showPage(1);
 
-                
-             
-             
 
-
-            addEvent();
+            
     })
  
 }
-
-
-   
-  
 
 getUsers();
 

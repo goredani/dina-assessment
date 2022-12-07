@@ -1,0 +1,61 @@
+form {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: #fff;
+    border: 1px solid #EAEAEA;
+    border-radius: 8px;
+    box-shadow:
+        4.8px 3.3px 10px rgba(0, 0, 0, 0.02),
+        38px 26px 80px rgba(0, 0, 0, 0.04)
+    ;
+
+    .input-container {
+        display: flex;
+        gap: 16px;
+        flex-direction: row;
+
+        div {
+            width: 50%;
+
+            input {
+                width: 100%;
+            }
+        }
+
+    }
+
+   .button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 8px;
+    gap: 16px;
+
+        input {
+            background-color: blue;
+            color: white;
+            padding: 8px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgb(72, 72, 255);
+            }
+        }
+
+        a {
+            color: blue;
+            padding: 8px;
+            border-radius: 8px;
+        }
+   }
+
+   fieldset {
+    border: 1px solid #EAEAEA;
+   }
+
+}

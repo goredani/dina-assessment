@@ -8,7 +8,6 @@ app.use(express.static(path.join(__dirname, '../frontend/')));
 
 app.get('/edit/:id', (req, res) => {
     const id = req.params.id;
-    console.log(id);
     res.sendFile(path.join(`${__dirname}/../frontend/edit/index.html`))    
 })
 

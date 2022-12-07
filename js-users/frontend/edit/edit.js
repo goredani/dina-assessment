@@ -8,12 +8,20 @@ let userId = String(match[1]);
 
 let editForm = (id, fName, lName, status) => {
     return `
-    <h2>Edit User (${id}) </h2>
+    
     <form id="editForm">
-        <label for="fname">First name:</label>
-        <input type="text" id="fname" name="fname" value=${fName} ${status === 'locked' ? 'disabled' : ''}><br><br>
-        <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname" value=${lName} ${status === 'locked' ? 'disabled' : ''}><br><br>
+        <h2>Edit User (${id}) </h2>
+        <div class="input-container">
+            <div>
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" required value=${fName} ${status === 'locked' ? 'disabled' : ''}>
+            </div>
+            <div>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname" required value=${lName} ${status === 'locked' ? 'disabled' : ''}>
+            </div>
+        </div>
+        
        
 
         <fieldset>
@@ -24,13 +32,15 @@ let editForm = (id, fName, lName, status) => {
             </div>
             <div>
                 <input type="radio" id="locked" name="status" value='locked' ${status === 'locked' ? 'checked' : ''}>
-                <label for="inactive">Locked</label>
+                <label for="locked">Locked</label>
             </div>
             
-
         </fieldset>
-        <input type="submit" value="Submit" >
-        <button>Cancel</button>
+        <div class="button-container">
+            <input type="submit" value="Save changes" >
+            <a href="/users/">Cancel </a>
+        </div>
+        
     </form>
     `
 }

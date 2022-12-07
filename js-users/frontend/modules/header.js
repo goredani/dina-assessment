@@ -5,7 +5,9 @@ export const header = () => {
             <li>
                 <a href="/">Home</a>
                 <a href="/users">Users</a>
-                <a href="/new">Add user</a>
+            </li>
+            <li>
+                <a class="link-button" href="/new">Add user</a>
             </li>
         </ul>
     </header>
