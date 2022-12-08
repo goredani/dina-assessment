@@ -24,6 +24,7 @@
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    min-width: 100%;
   }
   /*
     6. Improve media defaults
@@ -70,6 +71,12 @@ a {
     width: 60%;
     min-height: 100%;
     margin: 0 auto;
+
+    @media screen and (max-width: 900px) {
+        width: 90%;
+    }
+
+    
     
 }
 
@@ -109,4 +116,31 @@ header {
             border-radius: 8px;
         }
     }
+}
+
+// loading spinner
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid rgb(255, 0, 0);
+  border-color: rgb(155, 190, 255) transparent rgb(155, 190, 255) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -6,10 +6,7 @@ const submitForm = (newUserData) => {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
-            origin: 'example.com',
-            'x-requested-with': 'example.com',
-            'X-RapidAPI-Key': '6785502b5fmshea061e0c1243d1fp1cdb88jsn46601d1f963a',
-            'X-RapidAPI-Host': 'http-cors-proxy.p.rapidapi.com'
+            origin: 'example.com'
         },
         body: newUserData
     };

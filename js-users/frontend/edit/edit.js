@@ -1,4 +1,4 @@
-const formContainer = document.querySelector('#form');
+const formContainer = document.querySelector('#form-container');
 
 const pattern = /edit\/(\d+)/;
 const url = window.location.pathname;
@@ -57,7 +57,7 @@ const submit = (event) => {
     }
     JSON.stringify(update)
     console.log(update)
-   updateUser();
+    updateUser();
 }
 
 
