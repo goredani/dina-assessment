@@ -12,12 +12,20 @@
 #items {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
     gap: 16px;
     min-height: 80vh;
     margin-bottom: 16px;
+
+    .loading {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 80vh;
+    }
 
     .user {
         display: flex;

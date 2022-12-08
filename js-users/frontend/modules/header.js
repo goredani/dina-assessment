@@ -3,7 +3,7 @@ export const header = () => {
     <header>
         <ul>
             <li>
-                <a href="/">Home</a>
+                <a href="/">Main</a>
                 <a href="/users">Users</a>
             </li>
             <li>

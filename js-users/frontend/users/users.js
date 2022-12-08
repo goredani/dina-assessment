@@ -41,7 +41,7 @@ const getUsers = () => {
 
             let currentPage = 1;
 
-            
+            rootElement.insertAdjacentHTML('beforeend', '<div id="pagination-buttons"></div>');
 
             function showPage(page) {
                 // Update the current page
@@ -63,7 +63,7 @@ const getUsers = () => {
                 // Insert the items HTML and the pagination buttons HTML into the page
                 document.getElementById('items').innerHTML = itemsHtml;
                 
-                rootElement.insertAdjacentHTML('beforeend', '<div id="pagination-buttons"></div>');
+                
 
                 const paginationButtonsContainer = document.getElementById('pagination-buttons');
                 
