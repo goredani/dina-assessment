@@ -25,6 +25,14 @@ form {
             }
         }
 
+        @media screen and (max-width: 800px) {
+            flex-direction: column;
+
+            div {
+                width: 100%;
+            }
+        }
+
     }
 
    .button-container {
@@ -35,7 +43,7 @@ form {
     gap: 16px;
 
         input {
-            background-color: blue;
+            background-color: #0080FF;
             color: white;
             padding: 8px;
             border-radius: 8px;
@@ -48,9 +56,22 @@ form {
         }
 
         a {
-            color: blue;
+            color: #0080FF;
             padding: 8px;
             border-radius: 8px;
+        }
+        
+        @media screen and (max-width: 500px) {
+            flex-direction: column;
+
+            input {
+                width: 100%;
+            }
+
+            a {
+                width: 100%;
+                text-align: center;
+            }
         }
    }
 

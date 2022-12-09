@@ -1,32 +1,39 @@
 const rootElement = document.querySelector('#root');
 
 const displayUsers = (user) => {
-            return `<div ${user.status === 'locked' ? 'class="user locked"' : 'class="user"'}>
+            return `<div ${user.status === 'locked' ? 'class="user locked"' : 'class="user"'} id=${user.id}>
             <div>
                 <div class="user-name">${user.first_name} ${user.last_name}</div>
                 <div class="user-created">${new Date(user.created_at)}</div>
             </div>
             
             <div class="button-container">
-                <button id=${user.id}>Edit</button>
+                <button class="edit-button">Edit</button>
             </div>
             
             </div>`      
+}
+
+
+const addEvent = () => {
+    const userData = document.querySelectorAll('.user');
+    userData.forEach((event) => {
+        const editButton = event.querySelector('.edit-button');
+        const statusButton = event.querySelector('.status-button');
+
+        editButton.addEventListener('click', () => {
+            editUser(event.id);
+        });
+    })
 }
 
 const editUser = (userId) => {
     location.href = `/edit/${userId}`;
 }
 
-const addEvent = () => {
-    const userData = document.querySelectorAll('.user');
-    userData.forEach((event) => {
-        const editButton = event.querySelector('button');
-        editButton.addEventListener('click', () => {
-            editUser(editButton.id);
-        });
-    })
-}
+
+
+
 
 const getUsers = () => {
     fetch('https://assessment-users-backend.herokuapp.com/users/', {
@@ -37,13 +44,13 @@ const getUsers = () => {
         {  
             const itemsPerPage = 10;
             const totalPages = Math.ceil(data.length / itemsPerPage);
-            console.log(totalPages);
-
-            let currentPage = 1;
-
+            
             rootElement.insertAdjacentHTML('beforeend', '<div id="pagination-buttons"></div>');
 
-            function showPage(page) {
+            const showPage = (page) => {
+
+                
+                let currentPage = 1;
                 // Update the current page
                 currentPage = page;
             
@@ -58,6 +65,7 @@ const getUsers = () => {
                 let itemsHtml = '';
                 for (const item of pageItems) {
                 itemsHtml += displayUsers(item);
+                
                 }
             
                 // Insert the items HTML and the pagination buttons HTML into the page
@@ -77,29 +85,34 @@ const getUsers = () => {
                 }
 
                 addEvent();
+
+               
             }
 
 
-            function generatePaginationButtons() {
+
+            const generatePaginationButtons = () => {
+    
                 // Create an empty string to store the HTML
                 let paginationButtons = '';
-              
+                
                 // Loop through the total number of pages
                 for (let i = 1; i <= totalPages; i++) {
                   // Add the page number to the pagination buttons
+
                   paginationButtons += `<button>${i}</button>`;
                 }
-
+                
                 return paginationButtons;
             }
-             
-            // Function to show the specified page of items 
-            // showPage(${i})
+
+
+
 
             showPage(1);
 
-
             
+                
     })
  
 }

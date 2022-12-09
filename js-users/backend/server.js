@@ -6,9 +6,19 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, '../frontend/')));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/users/index.html'));
+
+app.get('/users/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/users/users.html'));
   });
+
+app.get('/edit/:id', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/edit/edit.html'));
+})
+
+app.get('/new/', (req, res) => {
+    const id = req.params.id;
+    res.sendFile(path.join(__dirname, '../frontend/new/new.html'));
+})
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
