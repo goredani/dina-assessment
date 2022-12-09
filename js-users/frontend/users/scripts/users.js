@@ -12,20 +12,19 @@ const displayUsers = (user) => `<div ${user.status === 'locked' ? 'class="user l
             
             </div>`;
 
+const editUser = (userId) => {
+  location.href = `/edit/${userId}`;
+};
+
 const addEvent = () => {
   const userData = document.querySelectorAll('.user');
   userData.forEach((event) => {
     const editButton = event.querySelector('.edit-button');
-    const statusButton = event.querySelector('.status-button');
 
     editButton.addEventListener('click', () => {
       editUser(event.id);
     });
   });
-};
-
-const editUser = (userId) => {
-  location.href = `/edit/${userId}`;
 };
 
 const getUsers = () => {

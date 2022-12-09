@@ -1,5 +1,4 @@
-export const header = () => {
-    return `
+export const header = () => `
     <header>
         <ul>
             <li>
@@ -11,6 +10,4 @@ export const header = () => {
             </li>
         </ul>
     </header>
-    `
-}
-
+    `;
