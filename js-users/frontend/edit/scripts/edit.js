@@ -1,4 +1,5 @@
-const formContainer = document.querySelector('#form-container');
+import { form } from '../../modules/form.js';
+
 
 const pattern = /edit\/(\d+)/;
 const url = window.location.pathname;
@@ -29,7 +30,17 @@ const submit = (event) => {
   updateUser();
 };
 
-const getUser = () => {
+const formContainer = document.querySelector('#form-container');
+
+const addToForm = (data) => formContainer.innerHTML = form(data.id, data.first_name, data.last_name, data.status);
+
+
+const addEvent = () => {
+  const handleForm = document.querySelector('#editForm');
+  handleForm.addEventListener('submit', submit);
+};
+
+const getUser = (userId) => {
   fetch(`https://assessment-users-backend.herokuapp.com/users/${userId}`, {
     method: 'GET',
   })
@@ -39,6 +50,8 @@ const getUser = () => {
       addEvent();
     });
 };
+
+
 
 const updateUser = () => {
   fetch(`https://assessment-users-backend.herokuapp.com/users/${userId}`, {
@@ -56,3 +69,7 @@ const updateUser = () => {
 };
 
 getUser(userId);
+
+      
+var module = module || {};
+module.exports = getUser;

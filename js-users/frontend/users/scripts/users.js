@@ -1,16 +1,4 @@
-const rootElement = document.querySelector('#root');
-
-const displayUsers = (user) => `<div ${user.status === 'locked' ? 'class="user locked"' : 'class="user"'} id=${user.id}>
-            <div>
-                <div class="user-name">${user.first_name} ${user.last_name}</div>
-                <div class="user-created">${new Date(user.created_at)}</div>
-            </div>
-            
-            <div class="button-container">
-                <button class="edit-button">Edit</button>
-            </div>
-            
-            </div>`;
+import { displayUsers } from '../../modules/displayUsers.js';
 
 const editUser = (userId) => {
   location.href = `/edit/${userId}`;
@@ -28,6 +16,8 @@ const addEvent = () => {
 };
 
 const getUsers = () => {
+  const rootElement = document.querySelector('#root');
+
   fetch('https://assessment-users-backend.herokuapp.com/users/', {
     method: 'GET',
   })
@@ -90,5 +80,7 @@ const getUsers = () => {
       showPage(1);
     });
 };
+
+
 
 getUsers();

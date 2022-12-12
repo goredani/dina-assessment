@@ -1,4 +1,4 @@
-import {header} from './modules/header.js';
+import { header } from './modules/header.js';
 
 const body = document.querySelector('#root');
 

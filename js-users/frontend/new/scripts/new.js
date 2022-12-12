@@ -1,41 +1,43 @@
-const formContainer = document.querySelector('#formContainer');
+import { form } from '../../modules/form.js';
+import { addNewUser } from '../../modules/addNewUser.js';
 
-const submitForm = (newUserData) => {
+let update = {};
 
-    const options = {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json',
-            origin: 'example.com'
-        },
-        body: newUserData
-    };
+const submit = (event) => {
+  event.preventDefault();
+  const first_name = event.target.elements.fname.value;
+  const last_name = event.target.elements.lname.value;
+  let status = '';
+  if (event.target.elements.active.checked === true) {
+    status = 'active';
+  } else {
+    status = 'locked';
+  }
 
-    console.log(newUserData);
+  update = {
+    first_name,
+    last_name,
+    status,
+  };
 
-    fetch(`https://assessment-users-backend.herokuapp.com/users/`, options)
-	.then(response => response.json())
-	.then(response => {
-        alert(`${response.first_name} ${response.last_name} successfully added`)
-        location.replace("/users/")
-    })
-	.catch(err => console.error(err));
+  addNewUser(update);
+};
 
-}
+const formContainer = document.querySelector('#form-container');
 
-const newUser = (event) => {
-    event.preventDefault();
-    const first_name = event.target.elements.fname.value;
-    const last_name = event.target.elements.lname.value;
-    const status = event.target.elements.active.value;
+const addToForm = () => formContainer.innerHTML = form();
 
-    newUserData = {
-        first_name: first_name,
-        last_name: last_name,
-        status: status
-    }
+const addEvent = () => {
+  const handleForm = document.querySelector('#editForm');
+  handleForm.addEventListener('submit', submit);
+};
 
-    submitForm(JSON.stringify(newUserData));
-}
+addToForm();
+addEvent();
+
+
+
+
+
 
 
