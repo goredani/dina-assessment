@@ -6,11 +6,11 @@ export const form = (id, fName = '' , lName = '', status) => {
         <div class="input-container">
             <div>
                 <label for="fname">First name:</label><br>
-                <input type="text" id="fname" name="fname" placeholder='eg. John' required value=${fName} ${status === 'locked' ? 'disabled' : ''} >
+                <input type="text" id="fname" name="fname" placeholder='eg. John' maxlength="50" required value=${fName} ${status === 'locked' ? 'disabled' : ''} >
             </div>
             <div>
                 <label for="lname">Last name:</label><br>
-                <input type="text" id="lname" name="lname" placeholder='eg. Doe' required value=${lName} ${status === 'locked' ? 'disabled' : ''} >
+                <input type="text" id="lname" name="lname" placeholder='eg. Doe' maxlength="50" required value=${lName} ${status === 'locked' ? 'disabled' : ''} >
             </div>
         </div>
         

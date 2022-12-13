@@ -26,7 +26,6 @@ const submit = (event) => {
     status,
   };
 
-  console.log(update);
   updateUser();
 };
 
@@ -70,6 +69,4 @@ const updateUser = () => {
 
 getUser(userId);
 
-      
-var module = module || {};
-module.exports = getUser;
+
